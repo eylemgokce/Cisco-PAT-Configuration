@@ -49,6 +49,6 @@ R1# show ip nat translations
 ```
 Öğrenilenler
 
-    Özel IP adreslerinin (Private IP) neden internete doğrudan çıkamadığı.
+->Özel IP adreslerinin (Private IP) neden internete doğrudan çıkamadığı.
 
-    overload komutunun portlar aracılığıyla nasıl IP tasarrufu sağladığı.
+->overload komutunun portlar aracılığıyla nasıl IP tasarrufu sağladığı.
