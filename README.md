@@ -15,37 +15,38 @@ Bu proje, Cisco Packet Tracer üzerinde PAT (Port Address Translation) kullanara
 1. Arayüzlerin NAT Rollerinin Belirlenmesi
 
 Router R1 üzerinde iç ve dış bacaklar tanımlanmıştır:
-
+```text
 R1(config)# interface gigabitEthernet 0/0
 R1(config-if)# ip nat inside
 R1(config)# interface serial 0/1/0
 R1(config-if)# ip nat outside
-
+```
 2. Erişim Listesi (ACL) Oluşturma
 
 Sadece yerel ağımızdaki cihazların internete çıkabilmesi için standart bir ACL tanımlanmıştır:
-
+```text
 R1(config)# access-list 1 permit 192.168.1.0 0.0.0.255
-
+```
 3. PAT (Overload) Yapılandırması
 
 ACL ile belirlenen trafiğin, dış arayüz IP'sini (10.0.0.1) port bazlı paylaşması sağlanmıştır:
-
+```text
 R1(config)# ip nat inside source list 1 interface serial 0/1/0 overload
-
+```
 4. Yönlendirme (Routing)
 
 Paketlerin ISP tarafına ulaşabilmesi için varsayılan rota (default route) eklenmiştir:
+```text
 R1(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.2
-
+```
 🔍 Doğrulama ve Test
 
 Yapılandırmayı test etmek için PC'lerden dış ağdaki sunucuya (192.31.7.100) ping atılmış ve NAT tablosu kontrol edilmiştir.
 
 NAT Çeviri Tablosu Sorgulama:
-
+```text
 R1# show ip nat translations
-
+```
 Öğrenilenler
 
     Özel IP adreslerinin (Private IP) neden internete doğrudan çıkamadığı.
