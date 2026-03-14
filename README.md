@@ -1,6 +1,7 @@
 Cisco Packet Tracer - PAT (NAT Overload) Yapılandırması
 
 Bu proje, Cisco Packet Tracer üzerinde PAT (Port Address Translation) kullanarak özel bir yerel ağın (LAN) tek bir genel IP adresi üzerinden dış ağlara (Internet/ISP) nasıl çıkarılacağını adım adım göstermektedir.
+
 🛠 Topoloji Bilgileri
 
     İç Ağ (LAN): 192.168.1.0 /24
